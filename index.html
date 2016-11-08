@@ -1,0 +1,121 @@
+<html>
+<head>
+    <title>slideshow assignment</title>
+
+    <style>
+
+
+    h1 {
+        color:white;
+        font-family: Impact, Charcoal, sans-serif;
+        letter-spacing: 8px;
+    }
+
+    body {
+        background: radial-gradient(circle, white 2%, black 98%);
+        height: 100%;
+        width: 100%;
+    }
+
+    img {
+        width:400px;
+        height:400px;
+        padding:4px;
+        background:#848484;
+    }
+
+    .button-left {
+
+        padding:20px;
+        background:rgba(0,0,0,.2);
+        color:white;
+        font-size:150%;
+        position:relative;
+        left:-190px;
+        top:-220px;
+    }
+
+    .button-right {
+
+        padding:20px;
+        background:rgba(0,0,0,.2);
+        color:white;
+        font-size:150%;
+        position:relative;
+        left:190px;
+        top:-220px;
+    }
+
+    </style>
+
+
+</head>
+<body>
+
+<center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1>All The Funny Dogs</h1>
+
+<div class="mySlides">
+<img src="images/dog1.jpeg">
+</div>
+
+<div class="mySlides">
+<img src="images/dog2.jpeg">
+</div>
+
+<div class="mySlides">
+<img src="images/dog3.jpeg">
+</div>
+
+<div class="mySlides">
+<img src="images/dog4.jpeg">
+</div>
+
+<div class="mySlides">
+<img src="images/dog5.jpeg">
+</div>
+
+
+<a class="back-button" onclick="plusDivs(-1)"> <span class="button-left">&lt;</span></a>
+<a class="forward-button" onclick="plusDivs(+1)"><span class="button-right">&gt;</span></a>
+
+</center>
+
+
+<script>
+
+var slideIndex = 0;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+
+    showDivs(slideIndex +=n);
+}
+
+
+function showDivs(n) {
+    
+    var i;
+    var x=document.getElementsByClassName("mySlides");
+
+    if (n>x.length) {slideIndex=1}
+    if (n<1) {slideIndex = x.length}
+    for (i=0; i<x.length; i++) {
+        x[i].style.display="none";}
+    x[slideIndex-1].style.display= "block";
+
+setTimeout(showDivs, 2000); 
+    }
+
+</script>
+
+
+</body>
+</html>
